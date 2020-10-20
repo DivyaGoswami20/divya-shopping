@@ -4,13 +4,11 @@
 		<div class="row">	
 		
 		<div class="col-md-3">	
-		<p class="lead">Shop Name</p>
-		<div class="list-group">	
-		<a href="a" class="list-group-item">Category 1</a>
-		<a href="a" class="list-group-item">Category 2</a>
-		<a href="a" class="list-group-item">Category 3</a>
+		<!-- include  side bar  -->
+
+	<%@include file="sidebar.jsp" %>
 		</div>
-		</div>
+			<!--   side bar over  -->
 		
 		<div class="col-md-9">	
 		

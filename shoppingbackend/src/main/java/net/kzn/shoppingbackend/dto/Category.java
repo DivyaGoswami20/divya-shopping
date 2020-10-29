@@ -1,5 +1,12 @@
 package net.kzn.shoppingbackend.dto;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Category {
 
 	/*
@@ -38,19 +45,33 @@ public class Category {
 		this.active = active;
 	}
 	
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", desciption=" + desciption + ", imageURL=" + imageURL
+				+ ", active=" + active + "]";
+	}
+
+
 	/*
 	 *    Create private field
 	 */
+	//her ek field ki id hogi means sare entity class k id hogi
+	//hum autogeneration strategy us karenge identity ke liye
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private String desciption;
 	private String imageURL;//path store krne k liye
-	private boolean active;//initially true
+	@Column(name="is_active")
+	private boolean active=true;//initially true
 	
 	
 	/*
 	 * Intially hum true denga admin
 	 */
+	
+	
 	
 	
 }

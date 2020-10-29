@@ -17,4 +17,8 @@ public interface CategoryDAO {
 	
 	Category get(int id);
  	
+	// new category ko database me add krne k liye
+	boolean add(Category category);
+	boolean update(Category category);
+	boolean delete(Category category);
 }

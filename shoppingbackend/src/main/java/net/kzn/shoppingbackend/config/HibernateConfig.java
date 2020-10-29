@@ -12,9 +12,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @ComponentScan(basePackages={"net.kzn.shoppingbackend.dto"})
+@EnableTransactionManagement
 public class HibernateConfig {
 //create five varible by using this we provide database realted information
 	private final String DATABASE_URL ="jdbc:h2:tcp://localhost/~/onlineshoppings";
@@ -48,8 +50,8 @@ return localSessionFactoryBuilder.buildSessionFactory();
 private Properties getHibernateproperties() {
 	Properties properties=new Properties();
 	properties.put("hibernate.dialect", DATABASE_DIALECT);
-	properties.put("hibernate.show_sql",true);
-	properties.put("hibernate.format_sql",true);
+	properties.put("hibernate.show_sql","true");
+	properties.put("hibernate.format_sql","true");
 	
 	return properties;
 }
